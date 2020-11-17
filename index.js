@@ -18,9 +18,12 @@ class Timer {
   pause = () => {
     clearInterval(this.interval)
   }
- 
+  
+  // Data - i.e. current time - in DOM (input element)
   tick = () => {
-    console.log('tick')
+    const timeRemaining = parseFloat(this.durationInput.value)
+    this.durationInput.value = timeRemaining - 1
+
   }
 
 }
