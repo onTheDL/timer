@@ -1,4 +1,5 @@
 const durationInput = document.querySelector("#duration");
+const initialTime = durationInput.value
 const startBtn = document.querySelector("#start");
 const pauseBtn = document.querySelector("#pause");
 const circle = document.querySelector("circle");
@@ -20,5 +21,8 @@ const timer = new Timer(durationInput, startBtn, pauseBtn, {
   },
   onComplete() {
     console.log("Timer is done");
+    console.log('duration: ', duration)
+    console.log('initialTime: ', initialTime)
+    durationInput.value = duration
   },
 });

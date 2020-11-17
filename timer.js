@@ -1,8 +1,8 @@
 class Timer {
   constructor(durationInput, startBtn, pauseBtn, callbacks) {
+    this.initialInput = durationInput
     this.durationInput = durationInput
     this.startBtn = startBtn
-    this.pauseBtn = pauseBtn
     this.pauseBtn = pauseBtn
 
     if (callbacks) {
@@ -33,7 +33,9 @@ class Timer {
   tick = () => {
     if (this.timeRemaining <= 0) {
       this.pause()
-      if(this.onComplete) this.onComplete()
+      if(this.onComplete) {
+        this.onComplete()
+      } 
     } else {
       this.timeRemaining = this.timeRemaining - 0.02
       if (this.onTick) {
