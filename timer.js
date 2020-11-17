@@ -31,7 +31,6 @@ class Timer {
   
   // Data - i.e. current time - sits in DOM (input element)
   tick = () => {
-    
     if (this.timeRemaining <= 0) {
       this.pause()
       if(this.onComplete) this.onComplete()
